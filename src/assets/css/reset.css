@@ -1,0 +1,52 @@
+html{
+  font-size: 100px;
+  box-sizing: border-box;
+  font-family: PingFang SC,Helvetica Neue,Hiragino Sans GB,Microsoft Yahei,WenQuanYi Micro Hei,sans-serif,"微软雅黑"  !important;
+}
+html,body{
+  width:100%;
+  height:100%;
+}
+body{
+  /* font-size: 14px; */
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+ul ,ol{
+  list-style: none;
+}
+img{
+  max-width: 100%;
+  -webkit-touch-callout: none;
+}
+input{
+  appearance: none;
+}
+.clear-float:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+textarea{
+  font-family: PingFang SC,Helvetica Neue,Hiragino Sans GB,Microsoft Yahei,WenQuanYi Micro Hei,sans-serif,"微软雅黑"  !important;
+}
+
+/*  */
+
+.weui-toast.weui-toast_text{
+  padding: 0 0.1rem;
+}
+.weui-cell{
+  padding:0 !important;
+}
+.weui-cell_access .weui-cell__ft{
+  display: none !important;
+}
+/* .weui-loading_toast{
+  z-index: 300;
+} */
