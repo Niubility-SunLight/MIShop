@@ -9,7 +9,16 @@
   align-items: center;
   height: 50px;
   background: #f2f2f2;
-  .appHeaderTitle{
-    font-size: .3rem;
+  > div {
+    font-size: 0;
+  }
+  a {
+    display: block;
+    width: 0.6rem;
+    margin: 0 0.2rem;
+  }
+  .appHeaderTitle {
+    color: #666;
+    font-size: 0.3rem;
   }
 }

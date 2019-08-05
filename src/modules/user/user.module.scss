@@ -1,0 +1,71 @@
+.container {
+  .hd {
+    background: url("../../assets/image/userBg.png") center 0 #f37d0f;
+    background-size: auto 100%;
+    padding: 0.32rem 0;
+    .user {
+      display: flex;
+      align-items: center;
+      .userImg {
+        font-size: 0;
+        margin: 0 0.16rem 0 0.32rem;
+        width: 0.96rem;
+        height: 0.96rem;
+        overflow: hidden;
+        box-sizing: border-box;
+        border-radius: 100%;
+        border: 3px solid hsla(0, 0%, 100%, 0.4);
+        text-align: center;
+        img {
+          width: auto;
+          height: 100%;
+          margin: 0 auto;
+        }
+      }
+      .name {
+        color: #fff;
+        font-size: 0.24rem;
+        text-align: left;
+      }
+    }
+  }
+  .b1 {
+    background-color: #fff;
+    height: 0.8rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.54);
+    position: relative;
+    padding-right: 0.56rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .b1Left {
+      font-size: 0.28rem;
+      padding: 0 0 0 0.32rem;
+      color: rgba(0, 0, 0, 0.87);
+    }
+    .b1Right {
+      display: flex;
+      align-items: center;
+      .navLink {
+        font-size: 0.24rem;
+        color: rgba(0, 0, 0, 0.87);
+      }
+    }
+  }
+  .b2{
+    padding: 0 .8rem;
+    background-color: #fff;
+  }
+  .trangleIco::after {
+    content: "";
+    position: absolute;
+    right: 0.32rem;
+    top: 50%;
+    width: 0.2rem;
+    height: 0.2rem;
+    border-left: 1px solid currentColor;
+    border-top: 1px solid currentColor;
+    transform: translate3d(0, -50%, 0) rotate(135deg);
+  }
+}
