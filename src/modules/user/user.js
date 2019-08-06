@@ -1,35 +1,82 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-
+import List from "../../components/list/list"
 import CSS from "./user.module.scss"
 
-const b2Obj = [
-    {
-        className: "dfk",
-        type: "代付款"
-    }, {
-        className: "dsh",
-        type: "代收货"
-    }, {
-        className: "thx",
-        type: "代退换修"
-    },
-]
-// function ListRender(props) {
-//     // console.log(props)
-//     let array = props
-//     console.log(array)
-//     const list = array.map((array, index) => {
-//       <li className={array.className} key={index}>{array.type}</li>
-//     })
-// }
-
+const optionUl = {
+    type: CSS.b2,
+    list: [
+        {
+            className: "dfk",
+            icoClasName: [CSS.b2Ico, CSS.dfkIco],
+            type: "待付款"
+        }, {
+            className: "dsh",
+            icoClasName: [CSS.b2Ico, CSS.dshIco],
+            type: "待收货"
+        }, {
+            className: "thx",
+            icoClasName: [CSS.b2Ico, CSS.thxIco],
+            type: "退换修"
+        },
+    ]
+}
+const ulItem1 = {
+    type: CSS.ulItems,
+    list: [
+        {
+            className: CSS.vipMember,
+            icoClassName: "",
+            type: "会员中心",
+        },
+        {
+            className: CSS.miWallet,
+            icoClassName: "",
+            type: "我的优惠",
+        }
+    ]
+}
+const ulItem2 = {
+    type: CSS.ulItems,
+    list: [
+        {
+            className: CSS.miServer,
+            icoClassName: "",
+            type: "服务中心",
+        },
+        {
+            className: CSS.miHome,
+            icoClassName: "",
+            type: "小米之家",
+        }
+    ]
+}
+const ulItem3 = {
+    type: CSS.ulItems,
+    list: [
+        {
+            className: CSS.fCode,
+            icoClassName: "",
+            type: "F码通道",
+        },
+    ]
+}
+const ulItem4 = {
+    type: CSS.ulItems,
+    list: [
+        {
+            className: "",
+            icoClassName: "",
+            type: "设置",
+        },
+    ]
+}
 export default class Mine extends Component {
-
+    constructor(props){
+        super(props)
+        console.log(props)
+    }
     render() {
-        const list = b2Obj.map((array, index) => {
-            return <li className={array.className} key={index}>{array.type}</li>
-        })
         return (
             <div className={CSS.container}>
                 <div className={CSS.hd}>
@@ -46,9 +93,15 @@ export default class Mine extends Component {
                         <Link to="/home" className={CSS.navLink}>全部订单</Link>
                     </div>
                 </div>
-                <ul className={CSS.b2}>
-                    {list}
-                </ul>
+                <List queryOptionsElementUl={optionUl} ></List>
+                <div className="ui-line"></div>
+                <List queryOptionsElementUl={ulItem1} ></List>
+                <div className="ui-line"></div>
+                <List queryOptionsElementUl={ulItem2} ></List>
+                <div className="ui-line"></div>
+                <List queryOptionsElementUl={ulItem3} ></List>
+                <div className="ui-line"></div>
+                <List queryOptionsElementUl={ulItem4} ></List>
             </div>
         )
     }

@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 
 export default class List extends Component {
-    static propTypes = {
-
-    }
 
     render() {
+        let list = this.props.queryOptionsElementUl.list.map((value, index) => {
+            return (
+                <li className={value.className ? value.className : ''} key={index}>
+                    <a href="javascript:;">
+                        <i className={value.icoClasName ? value.icoClasName.join(" ") : ''}></i>
+                        <span>{value.type}</span>
+                    </a>
+                </li>
+            )
+        })
         return (
-            <div>
-                
-            </div>
+            <ul className={this.props.queryOptionsElementUl.type}>
+                {list}
+            </ul>
         )
     }
 }

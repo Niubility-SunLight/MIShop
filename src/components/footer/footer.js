@@ -19,7 +19,7 @@ export default class Footer extends Component {
                     <i className={CSS.shopCar}></i>
                     <span>购物车</span>
                 </NavLink>
-                <NavLink to="/home" className={CSS.navLink} activeClassName={CSS.activeNavLink}>
+                <NavLink to="/user" className={CSS.navLink} activeClassName={CSS.activeNavLink}>
                     <i className={CSS.mine}></i>
                     <span>我的</span>
                 </NavLink>
