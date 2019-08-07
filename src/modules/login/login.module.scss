@@ -1,10 +1,191 @@
-.container{
-    min-height: 100%;
-    height: auto;
-    .wrap{
-        padding-bottom: .9rem;
-        .layoutPanel{
-            
+.container {
+  min-height: 100%;
+  height: auto;
+  .wrap {
+    padding-bottom: 0.9rem;
+    .layoutPanel {
+      .layout {
+        width: 100%;
+        margin: 0 auto 30px;
+        padding: 0 20px;
+        position: relative;
+        box-sizing: border-box;
+        .heardTitle {
+          padding: 30px 0 10px;
+          text-align: center;
+          font-size: 0;
+          img {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 15px;
+            display: block;
+          }
+          p {
+            font-size: 0.3456rem;
+            color: #000;
+            font-weight: normal;
+            line-height: normal;
+            font-family: PingFang SC, Helvetica Neue, Hiragino Sans GB, Microsoft Yahei, WenQuanYi Micro Hei, sans-serif,
+              "微软雅黑" !important;
+          }
         }
+        .labelAccount {
+          border-bottom: 1px solid #d3d3d3;
+          display: flex;
+          align-items: center;
+          .countryCodeList {
+            padding: 0.191999rem 10px 0.191999rem 0;
+            margin-right: 8px;
+            display: block;
+            margin-left: 8px;
+            font-size: 0.3rem;
+            .countryCode {
+              span {
+                margin-right: 2px;
+                color: #9b9b9b;
+                font-size: 0.3456rem;
+                // line-height: 0.3456rem;
+                position: relative;
+                display: flex;
+                align-items: center;
+                i {
+                  margin-left: 0.1rem;
+                  display: block;
+                  width: 0.15rem;
+                  height: 0.15rem;
+                  border-width: 0.01rem;
+                  border-style: solid;
+                  border-color: transparent transparent #9b9b9b #9b9b9b;
+                  -webkit-transform: rotate(-135deg);
+                  transform: rotate(-135deg);
+                }
+              }
+            }
+          }
+          input {
+            width: 100%;
+            padding: 0.31rem 0;
+            line-height: normal;
+            display: block;
+            font-size: 0.3456rem;
+            background: 0;
+            border: 0 none;
+            flex: 1;
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑",
+              Arial, sans-serif;
+            ::-webkit-input-placeholder {
+              color: #9b9b9b;
+            }
+          }
+          .clearInput {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            padding: 2px;
+            color: white;
+            // display: none;
+            font-size: 0.2rem;
+            width: 0.25rem;
+            height: 0.25rem;
+            text-align: center;
+            vertical-align: middle;
+          }
+          .showSercet {
+            width: 20px;
+            height: 16px;
+            display: block;
+            background-image: url(data:image/png;base64,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);
+            background-size: 100%;
+          }
+          .showSercetActive {
+            width: 20px;
+            height: 16px;
+            display: block;
+            background-image: url(data:image/png;base64,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);
+            background-size: 100%;
+          }
+          .sendCodePanel {
+            padding: 0.1rem 20px;
+            color: #333;
+            display: block;
+            // overflow: hidden;
+            // display: none;
+            display: flex;
+            align-self: stretch;
+            span {
+              align-self: center;
+              cursor: pointer;
+              color: #2ea5e5;
+              font-size: 0.27rem;
+            }
+          }
+        }
+        .submitBtnPanel {
+          margin-top: 24px;
+          button {
+            width: 100%;
+            padding: 0.192rem 0;
+            display: block;
+            margin-bottom: 14px;
+            text-align: center;
+            font-size: 0.3456rem;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 6px;
+            outline: none;
+            border: none;
+            font-family: PingFang SC, Helvetica Neue, Hiragino Sans GB, Microsoft Yahei, WenQuanYi Micro Hei, sans-serif,
+              "微软雅黑" !important;
+          }
+          .submitBtn {
+            background-color: #ff6700;
+          }
+          .btnSwitch {
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑",
+              Arial, sans-serif !important;
+            background: #fff;
+            margin-top: 24px;
+            border: 1px solid #d3d3d3;
+            color: #000;
+          }
+          .registerOrforget {
+            font-size: 0.3056rem;
+            text-align: center;
+
+            a {
+              font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑",
+                Arial, sans-serif !important;
+              color: #9b9b9b;
+              padding: 0 9px;
+            }
+            span {
+              &:nth-child(2) {
+                padding: 0;
+                color: #000;
+              }
+            }
+          }
+        }
+        .line {
+          border-top: 1px solid #f2f2f2;
+          padding-top: 10px;
+          p {
+            position: relative;
+            font-size: 0.12rem;
+            color: #b0b0b0;
+            width: 80px;
+            margin: -20px auto 0;
+          }
+          // &:after{
+          //   content: "";
+          //   display: block;
+          //   width: 100%;
+          //   border-top: 1px solid #f2f2f2;
+          //   position: absolute;
+          //   // top: 50%;
+          //   // transform: translateY(-50%)
+          // }
+        }
+      }
     }
+  }
 }

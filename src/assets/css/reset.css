@@ -1,7 +1,5 @@
 html {
-  line-height: 1.15;
   font-size: 100px;
-  box-sizing: border-box;
   /* font-family: PingFang SC,Helvetica Neue,Hiragino Sans GB,Microsoft Yahei,WenQuanYi Micro Hei,sans-serif,"微软雅黑"  !important; */
   font-family: Helvetica Neue, Tahoma, Arial, PingFangSC-Regular, Hiragino Sans GB, Microsoft Yahei, sans-serif, "微软雅黑" !important;
 }
@@ -16,7 +14,7 @@ body {
 }
 
 *, :after, :before {
-  box-sizing: inherit;
+  /* box-sizing: inherit; */
   margin: 0;
   padding: 0;
 }
@@ -39,6 +37,7 @@ img {
 
 input {
   appearance: none;
+  outline: none;
 }
 
 .clear-float:after {
