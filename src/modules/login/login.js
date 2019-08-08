@@ -72,10 +72,12 @@ export default class Login extends Component {
                             </div>
                             <LoginSercet />
                             {/* <LoginEmailBtnWrap /> */}
-                            <LoginSercetBtnWrap/>
+                            <LoginSercetBtnWrap />
                             {/* <LogigPhone /> */}
-                            <div className={CSS.line}>
-                                <p>其他方式登录</p>
+                            <div className={CSS.lineWrap}>
+                                <fieldset className={CSS.line}>
+                                    <legend>其他方式登录</legend>
+                                </fieldset>
                             </div>
                         </div>
                     </div>

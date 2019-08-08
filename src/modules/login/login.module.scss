@@ -133,15 +133,13 @@
             border-radius: 6px;
             outline: none;
             border: none;
-            font-family: PingFang SC, Helvetica Neue, Hiragino Sans GB, Microsoft Yahei, WenQuanYi Micro Hei, sans-serif,
-              "微软雅黑" !important;
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑",
+              Arial, sans-serif !important;
           }
           .submitBtn {
             background-color: #ff6700;
           }
           .btnSwitch {
-            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑",
-              Arial, sans-serif !important;
             background: #fff;
             margin-top: 24px;
             border: 1px solid #d3d3d3;
@@ -150,10 +148,9 @@
           .registerOrforget {
             font-size: 0.3056rem;
             text-align: center;
-
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑",
+              Arial, sans-serif !important;
             a {
-              font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑",
-                Arial, sans-serif !important;
               color: #9b9b9b;
               padding: 0 9px;
             }
@@ -165,25 +162,22 @@
             }
           }
         }
-        .line {
-          border-top: 1px solid #f2f2f2;
-          padding-top: 10px;
-          p {
-            position: relative;
-            font-size: 0.12rem;
-            color: #b0b0b0;
-            width: 80px;
-            margin: -20px auto 0;
+        .lineWrap {
+          padding-top: 40px;
+          text-align: center;
+          .line {
+            border: 0;
+            border-top: 1px solid #f2f2f2;
+            padding-top: 10px;
+            legend {
+              font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑",
+                Arial, sans-serif !important;
+              text-align: center;
+              font-size: 0.12rem;
+              color: #b0b0b0;
+              width: 80px;
+            }
           }
-          // &:after{
-          //   content: "";
-          //   display: block;
-          //   width: 100%;
-          //   border-top: 1px solid #f2f2f2;
-          //   position: absolute;
-          //   // top: 50%;
-          //   // transform: translateY(-50%)
-          // }
         }
       }
     }
