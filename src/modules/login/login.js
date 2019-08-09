@@ -38,7 +38,7 @@ function LoginSercet(props) {
         </div>
     )
 }
-function LoginEmailBtnWrap() {
+function LoginEmailBtnWrap(props) {
     return (
         <div className={CSS.submitBtnPanel}>
             <button className={CSS.submitBtn}>登录</button>
@@ -51,15 +51,24 @@ function LoginEmailBtnWrap() {
         </div>
     )
 }
-function LoginSercetBtnWrap() {
+function LoginSercetBtnWrap(props) {
+    console.log(props)
     return (
         <div className={CSS.submitBtnPanel}>
             <button className={CSS.submitBtn}>立即登录/注册</button>
-            <button className={CSS.btnSwitch}>用户名密码登录</button>
+            <button className={CSS.btnSwitch} onClick={props.handleClick}>用户名密码登录</button>
         </div>
     )
 }
+
 export default class Login extends Component {
+    constructor(props){
+        super(props)
+        console.log(props)
+    }
+    switchLoginType(e){
+        console.log(e)
+    }
     render() {
         return (
             <div className={CSS.container}>
@@ -72,15 +81,44 @@ export default class Login extends Component {
                             </div>
                             <LoginSercet />
                             {/* <LoginEmailBtnWrap /> */}
-                            <LoginSercetBtnWrap />
+                            <LoginSercetBtnWrap handleClick ={this.switchLoginType}/>
                             {/* <LogigPhone /> */}
                             <div className={CSS.lineWrap}>
                                 <fieldset className={CSS.line}>
                                     <legend>其他方式登录</legend>
                                 </fieldset>
                             </div>
+                            <div className={CSS.icoLoginType}>
+                                <div><i></i></div>
+                                <div><i></i></div>
+                                <div><i></i></div>
+                            </div>
+
                         </div>
                     </div>
+                </div>
+                <div className={CSS.langLine}>
+                    <ul>
+                        <li>
+                            <span>简体</span>
+                            |
+                        </li>
+                        <li>
+                            <span>繁体</span>
+                            |
+                        </li>
+                        <li>
+                            <span>English</span>
+                            |
+                        </li>
+                        <li>
+                            <span>常见问题</span>
+                            |
+                        </li>
+                        <li>
+                            <span>隐私政策</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         )

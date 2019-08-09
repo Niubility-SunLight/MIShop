@@ -25,7 +25,7 @@ class App extends Component {
                     <Route path="/user" component={User} />
                     <Route path="/login" component={Login} /> */}
                 </Switch>
-                <Footer></Footer>
+                {/* <Footer></Footer> */}
             </Router>
         )
     }

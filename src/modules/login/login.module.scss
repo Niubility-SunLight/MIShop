@@ -141,7 +141,6 @@
           }
           .btnSwitch {
             background: #fff;
-            margin-top: 24px;
             border: 1px solid #d3d3d3;
             color: #000;
           }
@@ -179,6 +178,85 @@
             }
           }
         }
+        .icoLoginType {
+          padding-top: 10px;
+          text-align: center;
+          display: box;
+          display: -webkit-box;
+          display: -moz-box;
+          box-pack: center;
+          -webkit-box-pack: center;
+          // background: red;
+          font-size: 0;
+          div {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            display: inline-block;
+            text-indent: -9999px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            i {
+              background: url(https://account.xiaomi.com/static/res/166d6dc/account-static/respassport/acc-2014/img/icons_type.png)
+                no-repeat;
+              display: block;
+              width: 18px;
+              height: 18px;
+              margin: 5px auto 0;
+            }
+            &:nth-child(1) {
+              background-color: #ed9090;
+              i {
+                background-position: -38px 0px;
+              }
+            }
+            &:nth-child(2) {
+              background-color: #6bb6ea;
+              i {
+                width: 26px;
+                background-position: -57px 0px;
+              }
+            }
+            &:nth-child(3) {
+              background-color: #00be00;
+              i {
+                width: 23px;
+                background-position: -84px 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .langLine {
+    padding: 0 20px;
+    line-height: normal;
+    text-align: center;
+    font-size: 0.2688rem;
+    // margin-top: -1.7288rem;
+    // height: 1.7288rem;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      li {
+        box-sizing: border-box;
+        display: inline-block;
+        color: #9b9b9b;
+
+        span{
+          padding: 0 10px;
+          font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑",
+          Arial, sans-serif !important;
+        }
+        // &::after{
+        //   content: "|";
+        //   display: inline-block;
+        //   font-size: 0.2688rem;
+        //   color: #9b9b9b;
+        // }
       }
     }
   }
