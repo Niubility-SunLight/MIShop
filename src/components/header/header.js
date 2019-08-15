@@ -3,16 +3,11 @@ import CSS from "./header.module.scss"
 import {withRouter} from 'react-router-dom'
 
 class Header extends Component {
-    constructor(props){
-        super(props)
-        console.log(props)
-    }
     render() {
         const { location: { pathname } } = this.props
         const hideHeaderPath = ['/user','/login']
         const hideHeader = hideHeaderPath.includes(pathname.trim())
         const isShowHeader =  hideHeader ? false : true
-        console.log(isShowHeader)
         return (
             <div className={!isShowHeader?`${CSS.headerContainer} hd-animateOut`:`${CSS.headerContainer} hd-animateIn`}>
                 <div className="app-header-left">

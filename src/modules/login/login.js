@@ -1,122 +1,83 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import CSS from "./login.module.scss";
+import Form from "./form"
+import { withRouter } from "react-router-dom";
 
-import CSS from "./login.module.scss"
-
-function LogigPhone(props) {
-    return (
-        <div>
-            <label className={CSS.labelAccount} htmlFor="">
-                <div className={CSS.countryCodeList}>
-                    <div className={CSS.countryCode}>
-                        <span>+86<i></i></span>
-                    </div>
-                </div>
-                <input type="tel" placeholder="手机号码" />
-                <div className={CSS.clearInput}>X</div>
-            </label>
-            <label className={CSS.labelAccount} htmlFor="">
-                <input type="tel" placeholder="短信验证码" />
-                <div className={CSS.sendCodePanel}>
-                    <span>获取验证码</span>
-                </div>
-            </label>
-        </div>
-    )
-}
-function LoginSercet(props) {
-    return (
-        <div>
-            <label className={CSS.labelAccount} htmlFor="">
-                <input type="tel" placeholder="手机号码" />
-                <div className={CSS.clearInput}>X</div>
-            </label>
-            <label className={CSS.labelAccount} htmlFor="">
-                <input type="password" placeholder="密码" />
-                <div className={CSS.showSercetActive}></div>
-            </label>
-        </div>
-    )
-}
-function LoginEmailBtnWrap(props) {
-    return (
-        <div className={CSS.submitBtnPanel}>
-            <button className={CSS.submitBtn}>登录</button>
-            <button className={CSS.btnSwitch}>手机短信登录/注册</button>
-            <div className={CSS.registerOrforget}>
-                <Link>立即注册</Link>
-                <span>|</span>
-                <Link>忘记密码？</Link>
-            </div>
-        </div>
-    )
-}
-function LoginSercetBtnWrap(props) {
-    console.log(props)
-    return (
-        <div className={CSS.submitBtnPanel}>
-            <button className={CSS.submitBtn}>立即登录/注册</button>
-            <button className={CSS.btnSwitch} onClick={props.handleClick}>用户名密码登录</button>
-        </div>
-    )
-}
-
-export default class Login extends Component {
-    constructor(props){
-        super(props)
-        console.log(props)
+function resetPageRootFontSize() {
+    let clientW = document.documentElement.clientWidth || document.body.clientWidth;
+    if (clientW <= 420) {
+        document.getElementsByTagName("html")[0].style.cssText = "font-size:100px";
+    } else if (clientW >= 421 && clientW <= 480) {
+        document.getElementsByTagName("html")[0].style.cssText = "font-size:110px";
+    } else if (clientW > 480 && clientW <= 540) {
+        document.getElementsByTagName("html")[0].style.cssText = "font-size:120px";
+    } else if (clientW >= 541 && clientW <= 660) {
+        document.getElementsByTagName("html")[0].style.cssText = "font-size:125px";
     }
-    switchLoginType(e){
-        console.log(e)
+}
+class Login extends Component {
+    componentDidMount() {
+        let reEvt = "orientationchange" in window ? "orientationchange" : "resize"
+        document.addEventListener("DOMContentLoaded", resetPageRootFontSize)
+        window.addEventListener(reEvt, resetPageRootFontSize)
+        if (this.props.location.pathname === "/login") {
+            resetPageRootFontSize()
+        }
+    }
+    componentWillUnmount() {
+        let reEvt = "orientationchange" in window ? "orientationchange" : "resize"
+        let clientW = document.documentElement.clientWidth || document.body.clientWidth;
+        document.getElementsByTagName("html")[0].style.fontSize = 50 * (clientW / 360) + "px";
+        document.removeEventListener("DOMContentLoaded",resetPageRootFontSize);
+        window.removeEventListener(reEvt,resetPageRootFontSize)
     }
     render() {
         return (
             <div className={CSS.container}>
                 <div className={CSS.wrap}>
-                    <div className={CSS.layoutPanel}>
-                        <div className={CSS.layout}>
-                            <div className={CSS.heardTitle}>
-                                <img src={require("../../assets/image/logo.png")} alt="" />
-                                <p>小米帐号登录</p>
-                            </div>
-                            <LoginSercet />
-                            {/* <LoginEmailBtnWrap /> */}
-                            <LoginSercetBtnWrap handleClick ={this.switchLoginType}/>
-                            {/* <LogigPhone /> */}
-                            <div className={CSS.lineWrap}>
-                                <fieldset className={CSS.line}>
-                                    <legend>其他方式登录</legend>
-                                </fieldset>
-                            </div>
-                            <div className={CSS.icoLoginType}>
-                                <div><i></i></div>
-                                <div><i></i></div>
-                                <div><i></i></div>
-                            </div>
-
+                    <div className={CSS.formWrap}>
+                        <Form />
+                    </div>
+                    <div className={CSS.lineTitle}>
+                        <fieldset>
+                            <legend>
+                                其他方式登录
+                        </legend>
+                        </fieldset>
+                        <div className={CSS.loginOtherType}>
+                            <a href="https://account.xiaomi.com/pass/sns/login/auth?appid=2996826273&&callback=https%3A%2F%2Fm.mi.com%2Fv1%2Fauthorize%2Fsso_callback%3Ffollowup%3Dhttps%253A%252F%252Fm.mi.com%252Fuser%26sign%3DZWJiMDc5YWVjOTNkNGE5YzM4Mjc2Y2I1MGYxMmE0YmY4MmRkMDY1Ng%2C%2C&sid=mi_eshopm_go">
+                                <i></i>
+                            </a>
+                            <a href="https://account.xiaomi.com/pass/sns/login/auth?appid=2088011127562160&&callback=https%3A%2F%2Fm.mi.com%2Fv1%2Fauthorize%2Fsso_callback%3Ffollowup%3Dhttps%253A%252F%252Fm.mi.com%252Fuser%26sign%3DZWJiMDc5YWVjOTNkNGE5YzM4Mjc2Y2I1MGYxMmE0YmY4MmRkMDY1Ng%2C%2C&sid=mi_eshopm_go">
+                                <i></i>
+                            </a>
+                            <a href="https://account.xiaomi.com/pass/sns/login/auth?appid=wxxmh5&scope=snsapi_userinfo&callback=https%3A%2F%2Fm.mi.com%2Fv1%2Fauthorize%2Fsso_callback%3Ffollowup%3Dhttps%253A%252F%252Fm.mi.com%252Fuser%26sign%3DZWJiMDc5YWVjOTNkNGE5YzM4Mjc2Y2I1MGYxMmE0YmY4MmRkMDY1Ng%2C%2C&sid=mi_eshopm_go">
+                                <i></i>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div className={CSS.langLine}>
+
+                <div className={CSS.customDisplay}>
                     <ul>
                         <li>
-                            <span>简体</span>
+                            <a href="#">简体</a>
                             |
                         </li>
                         <li>
-                            <span>繁体</span>
+                            <a href="#">繁体</a>
                             |
                         </li>
                         <li>
-                            <span>English</span>
+                            <a href="#">English</a>
                             |
                         </li>
                         <li>
-                            <span>常见问题</span>
+                            <a href="#">常见问题</a>
                             |
                         </li>
                         <li>
-                            <span>隐私政策</span>
+                            <a href="#">隐私政策</a>
                         </li>
                     </ul>
                 </div>
@@ -124,3 +85,6 @@ export default class Login extends Component {
         )
     }
 }
+
+
+export default withRouter(Login)

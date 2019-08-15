@@ -1,29 +1,29 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
+
 
 import CSS from "./footer.module.scss"
-export default class Footer extends Component {
+class Footer extends Component {
 
     render() {
+        const { location: { pathname } } = this.props
+        const hideHeaderPath = ['/login']
+        const hideHeader = hideHeaderPath.includes(pathname.trim())
+        const isShowHeader = hideHeader ? false : true
+        let navLinkList = [{ url: "/home", text: "首页", css: CSS.home }, { url: "/category", text: "分类", css: CSS.type }, { url: "/cart", text: "购物车", css: CSS.shopCar }, { url: "/user", text: "我的", css: CSS.mine }].map((value, index) => {
+            return <NavLink to={value.url} className={CSS.navLink} activeClassName={CSS.activeNavLink} key={index}>
+                <i className={CSS.home} ></i>
+                <span>{value.text}</span>
+            </NavLink>
+        })
         return (
-            <div className={CSS.container}>
-                <NavLink to="/home" className={CSS.navLink} activeClassName={CSS.activeNavLink}>
-                    <i className={CSS.home} ></i>
-                    <span>首页</span>
-                </NavLink>
-                <NavLink to="/home" className={CSS.navLink} activeClassName={CSS.activeNavLink}>
-                    <i className={CSS.type}></i>
-                    <span>分类</span>
-                </NavLink>
-                <NavLink to="/home" className={CSS.navLink} activeClassName={CSS.activeNavLink}>
-                    <i className={CSS.shopCar}></i>
-                    <span>购物车</span>
-                </NavLink>
-                <NavLink to="/user" className={CSS.navLink} activeClassName={CSS.activeNavLink}>
-                    <i className={CSS.mine}></i>
-                    <span>我的</span>
-                </NavLink>
+            <div>
+                {isShowHeader ? <div className={CSS.container}>
+                    {navLinkList}
+                </div> : false}
             </div>
+
         )
     }
 }
+export default withRouter(Footer)
