@@ -17,11 +17,11 @@ class Footer extends Component {
             </NavLink>
         })
         return (
-            <div>
+            <>
                 {isShowHeader ? <div className={CSS.container}>
                     {navLinkList}
                 </div> : false}
-            </div>
+            </>
 
         )
     }
