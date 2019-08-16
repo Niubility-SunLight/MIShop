@@ -1,0 +1,16 @@
+.container{
+    // color: red;
+    display: flex;
+    .listNavBar{
+        padding: 50px 0 52px;
+        height: calc(100vh);
+        box-sizing: border-box;
+        width: 1.52rem;
+        border-right: 1px solid #efefef;
+    }
+    .listGoodsItem{
+        flex: 1;
+        padding: 50px 0 52px;
+        height: calc(100vh - 102px);
+    }
+}

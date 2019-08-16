@@ -8,7 +8,6 @@ import PropTypes from 'prop-types'
 class Scroll extends Component {
     constructor(props) {
         super(props)
-        console.log(props)
     }
 
     componentDidUpdate() {
@@ -48,7 +47,7 @@ class Scroll extends Component {
     }
     render() {
         return (
-            <div className="scroll-wrapper scroll-view" ref="scrollView">
+            <div className="scroll-wrapper" ref="scrollView">
                 {this.props.children}
             </div>
         )
