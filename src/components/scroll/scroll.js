@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'
 class Scroll extends Component {
     constructor(props) {
         super(props)
+        console.log(props)
     }
 
     componentDidUpdate() {
@@ -31,9 +32,15 @@ class Scroll extends Component {
                     click: this.props.click
                 });
                 if (this.props.onScroll) {
-                    this.bScroll.on('scroll', (scroll) => {
+                    // this.bScroll.on('scroll', (scroll) => {
+                    //     this.props.onScroll(scroll);
+                    // })
+                    this.bScroll.on('scrollEnd', (scroll) => {
                         this.props.onScroll(scroll);
                     })
+                }
+                if (this.props.scrollTo) {
+                    // this.bScroll.scrollTo()
                 }
             }
         }, 0);

@@ -4,9 +4,6 @@ import Header from './header/header'
 import Footer from './footer/footer'
 import routers from '@/router/router'
 class App extends Component {
-    constructor(props) {
-        super(props)
-    }
     render() {
         let routersList = routers.map((route, index) => {
             // return <Route key={index} path={route.path} exact render={props =>(<route.component {...props} />)} />
@@ -17,9 +14,6 @@ class App extends Component {
                 <Header></Header>
                 <Switch>
                     {routersList}
-                    {/* <Route path="/home" component={Home} />
-                    <Route path="/user" component={User} />
-                    <Route path="/login" component={Login} /> */}
                 </Switch>
                 <Footer></Footer>
             </Router>

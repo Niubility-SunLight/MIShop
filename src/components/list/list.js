@@ -6,10 +6,10 @@ export default class List extends Component {
         let list = this.props.queryOptionsElementUl.list.map((value, index) => {
             return (
                 <li className={value.className ? value.className : ''} key={index}>
-                    <a href="javascript:;">
+                    <div>
                         <i className={value.icoClasName ? value.icoClasName.join(" ") : ''}></i>
                         <span>{value.type}</span>
-                    </a>
+                    </div>
                 </li>
             )
         })

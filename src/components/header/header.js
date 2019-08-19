@@ -11,17 +11,17 @@ class Header extends Component {
         return (
             <div className={!isShowHeader?`${CSS.headerContainer} hd-animateOut`:`${CSS.headerContainer} hd-animateIn`}>
                 <div className="app-header-left">
-                    <a href="javascript:;">
+                    <div>
                         <i className="image-icons app-header-icon icon-back"></i>
-                    </a>
+                    </div>
                 </div>
                 <div className="app-header-middle">
                     <p className={CSS.appHeaderTitle}>购物车</p>
                 </div>
                 <div className="app-header-right">
-                    <a href="javascript:;">
+                    <div>
                         <i className="image-icons app-header-icon icon-search"></i>
-                    </a>
+                    </div>
                 </div>
             </div>
         )

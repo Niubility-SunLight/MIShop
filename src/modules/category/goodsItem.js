@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import CSS from "./goodsItem.module.scss";
-import PropTypes from 'prop-types'
 function GoodsComponents(props) {
     return (
         props.list.map((group, groupIndex) => {
-            return (<div className={CSS.goodsItemMain} key={groupIndex}>
+            return (<div data-index={groupIndex} className={CSS.goodsItemMain} key={groupIndex}>
                 {
                     group.category_list && group.category_list.map((value, index) => {
                         if (value.view_type === "cells_auto_fill") {
@@ -47,21 +46,14 @@ function GoodsComponents(props) {
 }
 
 class goodsItem extends Component {
-    constructor(props) {
-        super(props)
-    }
     render() {
         return (
-            <div className={CSS.componentListMain}>
+            <div className={CSS.componentListMain} ref="goodsItemList">
                 <GoodsComponents list={this.props.list}></GoodsComponents>
             </div>
 
         )
     }
-}
-
-goodsItem.propTypes = {
-
 }
 
 export default goodsItem
