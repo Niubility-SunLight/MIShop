@@ -5,7 +5,7 @@ import {withRouter} from 'react-router-dom'
 class Header extends Component {
     render() {
         const { location: { pathname } } = this.props
-        const hideHeaderPath = ['/user','/login']
+        const hideHeaderPath = ['/user','/login','/home']
         const hideHeader = hideHeaderPath.includes(pathname.trim())
         const isShowHeader =  hideHeader ? false : true
         return (
