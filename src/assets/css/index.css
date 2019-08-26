@@ -61,3 +61,23 @@
 .countryCode-animateIn{
     animation: slideInLeft 0.4s linear forwards;
 }
+
+
+.homeHeaderSlide-enter{
+    max-height: 0rem !important;
+}
+.homeHeaderSlide-enter-active{
+    max-height: 10rem !important;
+    transition: max-height .3s ease-in-out;
+}
+.homeHeaderSlide-enter-done{
+    max-height: 10rem !important;
+}
+.homeHeaderSlide-exit{
+    display: block;
+    transition: display 0ms;
+}
+.homeHeaderSlide-exit-active{
+    display: none;
+    transition: display 0ms;
+}
