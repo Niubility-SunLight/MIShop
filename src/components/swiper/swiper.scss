@@ -1,0 +1,30 @@
+.swiper-container{
+    width: 100%;
+    height: auto;
+    font-size: .22rem;
+    line-height: 1.15;
+    .swiper-wrapper{
+        .swiper-slide{
+            // height: 3.6rem;
+            width: 100%;
+            position: relative;
+            img{
+                display: block;
+                width: 100%;
+                height: auto;
+                transform: translate(-50%,-50%);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+            }
+        }
+    }
+    .swiper-pagination-bullet{
+        background: #fff;
+        margin-left: 5px !important;
+        margin-right: 5px !important; 
+    }
+    .swiper-pagination-bullet-active{
+        background: #fff;
+    }
+}

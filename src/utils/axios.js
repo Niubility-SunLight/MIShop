@@ -2,7 +2,7 @@
 import axios from "axios"
 import qs from "qs"
 import env from "./env"
-import urlAPI from "./newAPI"
+// import urlAPI from "./newAPI"
 
 
 // axios.defaults.baseURL = env.debug ? "http://192.168.10.58:8081/" : 'http://60.190.249.111:8899/';
@@ -75,7 +75,12 @@ function get(url, params = {}) {
 
 function post(url, data = {}) {
     return new Promise((resolve, reject) => {
-        axios.post(url, data)
+        axios.post(url, data,{
+            headers:{
+                referer: 'https://c.y.qq.com/',  //源域名
+                host: 'c.y.qq.com'
+            }
+        })
             .then(response => {
                 resolve(response.data);
             }, err => {
@@ -91,7 +96,7 @@ function post(url, data = {}) {
 * @returns {function}
 */
 function httpRequest(url, method, data) {
-    let rdata = { ...publicData, ...data }
+    let rdata = {...data }
     rdata = qs.stringify(rdata)
     if (method === "post") {
         return post(url, rdata)

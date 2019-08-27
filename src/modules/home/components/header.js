@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CSS from "./header.module.scss";
-import { tabs } from "./data"
+import { tabs } from "../data"
 import { CSSTransition } from "react-transition-group"
 export default class Header extends Component {
     constructor(props) {
