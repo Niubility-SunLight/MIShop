@@ -1,6 +1,9 @@
 .cellsAutoFill{
     position: relative;
     .multiCellItem{
+        height: auto!important;
+        display: block;
         position: absolute;
+        
     }
 }
