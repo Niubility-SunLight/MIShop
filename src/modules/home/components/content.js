@@ -3,10 +3,9 @@ import CSS from "./content.module.scss";
 import Swiper from "@/components/swiper/swiper"
 import CellsAutoFill from "./cellsAutoFill";
 import DividerLine from "./dividerLine"
+import GoodsItem from "./goodsItem"
+import ListActionTitle from "./listActionTitle"
 export default class Content extends Component {
-    constructor(props) {
-        super(props)
-    }
     componentDidMount() {
 
     }
@@ -21,24 +20,29 @@ export default class Content extends Component {
                                 return (
                                     <Swiper item={ele} key={index}></Swiper>
                                 )
-                            } else if (ele.view_type === "cells_auto_fill") {
+                            }
+                            if (ele.view_type === "cells_auto_fill") {
                                 return (
                                     <CellsAutoFill item={ele} key={index}></CellsAutoFill>
                                 )
-                            } else if (ele.view_type === "divider_line") {
+                            }
+                            else if (ele.view_type === "divider_line") {
                                 return (
                                     <DividerLine item={ele} key={index}></DividerLine>
                                 )
 
-                            } else if (ele.view_type === "list_two_type13") {
-
                             }
-
+                            else if (ele.view_type === "list_action_title") {
+                                return (<ListActionTitle item={ele} key={index}></ListActionTitle>
+                                )
+                            }
+                            else if (ele.view_type === "list_two_type13" || ele.view_type === "list_two_type1" || ele.view_type === "list_one_type2" || ele.view_type === "list_one_type3") {
+                                return (
+                                    <GoodsItem item={ele} key={index}></GoodsItem>
+                                )
+                            }
                         })
                     }
-
-
-
                 </div>
             </div>
         )

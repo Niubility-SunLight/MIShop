@@ -1,0 +1,16 @@
+.appViewWrapper{
+    position: relative;
+    max-width: 7.2rem;
+    margin: 0 auto;
+}
+.container{
+    background: #fff;
+    color: #3c3c3c;
+    padding-top: 50px;
+    padding-bottom: 52px;
+    .pageWrap{
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}

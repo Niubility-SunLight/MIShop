@@ -3,7 +3,6 @@ import CSS from "./dividerLine.module.scss"
 export default class DividerLine extends Component {
     constructor(props) {
         super(props)
-        console.log(props)
         this.state = {
             style: {
 
@@ -13,8 +12,8 @@ export default class DividerLine extends Component {
     render() {
         return (
             <div className={CSS.dividerLine} style={{
-                height: `${this.props.item.body.line_height/150}rem`,
-                borderBottom: `${this.props.item.body.line_height/150}rem solid ${this.props.item.body.line_color}`,
+                height: `${this.props.item.body.line_height===2?this.props.item.body.line_height/100:this.props.item.body.line_height/150}rem`,
+                borderBottom: `${this.props.item.body.line_height===2?this.props.item.body.line_height/100:this.props.item.body.line_height/150}rem solid ${this.props.item.body.line_color}`,
                 backgroundColor: `${this.props.item.body.line_color}`
             }}>
 

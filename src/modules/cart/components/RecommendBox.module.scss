@@ -1,0 +1,113 @@
+.RecommendBox {
+    padding-bottom: .9rem;
+    .RecommendTopImg {
+        width: 7.2rem;
+        line-height: 1.15;
+        font-size: 0.22rem;
+        img {
+            width: 7.2rem;
+            height: 1.2rem;
+        }
+    }
+
+    .RecommendList {
+        overflow: hidden;
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        align-content: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .listTwoType1 {
+        flex: 0 1 49.5%;
+        overflow: hidden;
+        font-size: 0.22rem;
+        box-sizing: border-box;
+
+        .goodsItem {
+            box-sizing: border-box;
+            font-size: 0.22rem;
+            line-height: 1.15;
+            flex: 1 1 auto;
+            .imgWrapper {
+                position: relative;
+                overflow: hidden;
+                font-size: 0;
+                line-height: 1.15;
+            }
+
+            .goodsInfo {
+                padding: .18rem .26rem .22rem;
+                text-align: left;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 0.22rem;
+                line-height: 1.15;
+
+                .name {
+                    font-size: .28rem;
+                    color: rgba(0, 0, 0, .87);
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .brief {
+                    margin-top: .06rem;
+                    font-size: .22rem;
+                    line-height: .3rem;
+                    color: rgba(0, 0, 0, .54);
+                }
+
+                .price {
+                    font-size: .32rem;
+                    display: inline-block;
+                    color: #ff6700;
+                    margin-top: .1rem;
+                    position: relative;
+                    padding-left: .5em;
+                    line-height: 1em;
+
+                    &::before {
+                        content: "\A5";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        font-size: .76em;
+                        text-decoration: none;
+                    }
+
+                    span {
+                        display: inline-block;
+                        margin-left: .04rem;
+                        font-size: .2rem;
+                    }
+
+                    .oldPrice {
+                        font-size: .22rem;
+                        margin-left: .1rem;
+                        color: rgba(0,0,0,.54);
+                        text-decoration: line-through;
+                        position: relative;
+                        padding-left: .5em;
+                        line-height: 1em;
+
+
+                        &::before {
+                            content: "\A5";
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            font-size: .76em;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

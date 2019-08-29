@@ -1,7 +1,251 @@
-.listTwoType{
+.listTwoType13 {
     display: flex;
     padding: 0 .12rem;
     width: 100%;
     overflow: hidden;
     text-align: center;
+    box-sizing: border-box;
+    .goodsItem {
+        width: 3.4rem;
+
+        &:first-child {
+            margin-right: .12rem;
+        }
+
+        .imgWrapper {
+            position: relative;
+            overflow: hidden;
+
+            img {
+                display: block;
+            }
+        }
+
+        .goodsInfo {
+            padding: .2rem .27rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: .22rem;
+
+            .name {
+                font-size: .28rem;
+                color: rgba(0, 0, 0, .87);
+
+            }
+
+            .brief {
+                margin-top: .06rem;
+                font-size: .22rem;
+                line-height: .3rem;
+                color: rgba(0, 0, 0, .54);
+            }
+
+            .price {
+                font-size: .28rem;
+                color: #ea625b;
+                height: 1.5em;
+                line-height: 1.5em;
+                position: relative;
+                display: inline-block;
+                padding-left: .5em;
+
+                &::before {
+                    content: "\A5";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    font-size: .76em;
+                    text-decoration: none;
+                }
+
+                span {
+                    display: inline-block;
+                    margin-left: .04rem;
+                    font-size: .2rem;
+                }
+
+                .oldPrice {
+                    display: inline-block;
+                    margin: 0 .1rem;
+                    font-size: .22rem;
+                    color: rgba(0, 0, 0, .54);
+                    height: 1.5em;
+                    line-height: 1.5em;
+                    position: relative;
+                    padding-left: .5em;
+
+
+                    &::before {
+                        content: "\A5";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        font-size: .76em;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .buyBtn {
+                width: 2rem;
+                margin: 0 auto;
+                background: #ea625b;
+                border-radius: .05rem;
+                text-align: center;
+                color: #fff;
+                font-size: .24rem;
+                padding: .16rem 0;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.listTwoType1 {
+    display: flex;
+    box-sizing: border-box;
+    .goodsItem {
+        box-sizing: border-box;
+        width: 3.6rem;
+
+        flex: 1 1 auto;
+
+        &:first-child {
+            margin-right: .04rem;
+        }
+
+        .imgWrapper {
+            position: relative;
+            overflow: hidden;
+            width: 3.6rem;
+            height: 3.6rem;
+        }
+
+        .goodsInfo {
+            padding: .2rem .27rem;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 0.22rem;
+            line-height: 1.15;
+            .name {
+                font-size: .28rem;
+                color: rgba(0, 0, 0, .87);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .brief {
+                margin-top: .06rem;
+                font-size: .22rem;
+                line-height: .3rem;
+                color: rgba(0, 0, 0, .54);
+            }
+
+            .price {
+                font-size: .28rem;
+                color: #ea625b;
+                height: 1.5em;
+                line-height: 1.5em;
+                position: relative;
+                display: inline-block;
+                padding-left: .5em;
+
+                &::before {
+                    content: "\A5";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    font-size: .76em;
+                    text-decoration: none;
+                }
+
+                span {
+                    display: inline-block;
+                    margin-left: .04rem;
+                    font-size: .2rem;
+                }
+
+                .oldPrice {
+                    display: inline-block;
+                    margin: 0 .1rem;
+                    font-size: .22rem;
+                    color: rgba(0, 0, 0, .54);
+                    height: 1.5em;
+                    line-height: 1.5em;
+                    position: relative;
+                    padding-left: .5em;
+
+
+                    &::before {
+                        content: "\A5";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        font-size: .76em;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ListOneType2,.ListOneType3 {
+
+    .goodsItem {
+        display: flex;
+        width: 100%;
+
+        .imgWrapper {
+            width: 3.6rem;
+            height: 3.6rem;
+            position: relative;
+            overflow: hidden;
+            flex: 1 1 auto;
+
+        }
+
+        .goodsInfo {
+            padding: .64rem .12rem 0 .32rem;
+            box-sizing: border-box;
+            width: 3.6rem;
+            height: 3.6rem;
+            text-align: left;
+            flex: 1 1 auto;
+            text-align: center;
+            font-size: 0.22rem;
+
+            .name {
+                font-size: .28rem;
+                color: rgba(0, 0, 0, .87);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .brief {
+                
+                margin-top: .06rem;
+                font-size: .22rem;
+                line-height: .35rem;
+                color: rgba(0, 0, 0, .54);
+            }
+
+            .price {
+                margin-top: .2rem;
+                padding-left: .5em;
+                font-size: .28rem;
+                color: #ea625b;
+                height: 1.5em;
+                line-height: 1.5em;
+                position: relative;
+                display: inline-block;
+            }
+
+        }
+    }
 }
