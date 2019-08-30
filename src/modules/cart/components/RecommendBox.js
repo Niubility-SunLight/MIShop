@@ -13,7 +13,7 @@ export default class RecommendBox extends Component {
                     {
                         this.props.data.header.body.items.map((ele, index) => {
                             return (
-                                <img src={ele.img_url} alt="" />
+                                <img src={ele.img_url} alt="" key={index}/>
                             )
                         })
                     }
@@ -23,7 +23,7 @@ export default class RecommendBox extends Component {
                     {
                         this.props.data.recom_list.map((ele, index) => {
                             return (
-                                <div className={CSS.listTwoType1}>
+                                <div className={CSS.listTwoType1} key={index}>
                                     <div className={CSS.goodsItem} key={index}>
                                         <div className={CSS.imgWrapper}>
                                             <img src={ele.image_url} alt="" />

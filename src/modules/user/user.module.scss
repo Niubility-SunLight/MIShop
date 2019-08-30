@@ -32,6 +32,7 @@
     }
   }
   .b1 {
+    box-sizing: border-box;
     background-color: #fff;
     height: 0.8rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
@@ -43,6 +44,7 @@
     align-items: center;
     .b1Left {
       font-size: 0.28rem;
+      line-height: 1.15;
       padding: 0 0 0 0.32rem;
       color: rgba(0, 0, 0, 0.87);
     }
@@ -60,10 +62,13 @@
     background-color: #fff;
     display: flex;
     justify-content: space-between;
+    font-size: 0.22rem;
     > li {
       display: flex;
+      font-size: 0.22rem;
       box-sizing: border-box;
       padding: 0.4rem 0;
+      line-height: 1.15;
       > div {
         display: flex;
         flex-direction: column;
@@ -99,7 +104,6 @@
         no-repeat 0.32rem;
       background-size: 0.48rem auto;
       border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-      line-height: 0;
       list-style: none;
       > div {
         display: flex;

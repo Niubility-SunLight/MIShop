@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import List from "../../components/list/list"
+import Toast from "./components/toast/toast"
 import CSS from "./user.module.scss"
 
 const optionUl = {
@@ -72,19 +73,35 @@ const ulItem4 = {
     ]
 }
 export default class Mine extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         console.log(props)
+        this.state = {
+            isLogin: false,
+            isShowToastConfirm: false,
+        }
+    }
+    goToLoginPage(e) {
+        e.persist()
+        console.log(e)
+        if (this.state.isLogin) {
+
+        } else {
+            this.setState({
+                isShowToastConfirm: true
+            })
+        }
     }
     render() {
         return (
             <div className={CSS.container}>
+
                 <div className={CSS.hd}>
                     <div className={CSS.user}>
                         <div className={CSS.userImg}>
                             <img src={require('../../assets/image/avatar.png')} alt="" />
                         </div>
-                        <div className={CSS.name}>登录/注册</div>
+                        <div className={CSS.name} onClick={(e) => this.goToLoginPage(e)}>登录/注册</div>
                     </div>
                 </div>
                 <div className={CSS.b1}>
@@ -102,6 +119,12 @@ export default class Mine extends Component {
                 <List queryOptionsElementUl={ulItem3} ></List>
                 <div className="ui-line"></div>
                 <List queryOptionsElementUl={ulItem4} ></List>
+                {
+                    this.state.isShowToastConfirm ? <Toast status={this.state.isShowToastConfirm}></Toast>: false
+                }
+                 {/* <Toast status={this.state.isShowToastConfirm}></Toast> */}
+
+
             </div>
         )
     }

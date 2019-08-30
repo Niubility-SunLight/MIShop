@@ -62,7 +62,7 @@
     animation: slideInLeft 0.4s linear forwards;
 }
 
-
+/* 首页头部动画 */
 .homeHeaderSlide-enter{
     max-height: 0rem !important;
 }
@@ -80,6 +80,19 @@
 .homeHeaderSlide-exit-active{
     display: none;
     transition: display 0ms;
+    
+}
+/* 我的页面弹窗动画 */
+.toastScale-enter{
+    transform: scale(0);
+}
+.toastScale-enter-active{
+    transform: scale(1.1);
+    transition: transform 52s linear;
+}
+.toastScale-enter-done{
+    transform: scale(1);
+    transition: transform 50s linear;
 }
 
 
