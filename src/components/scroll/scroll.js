@@ -6,11 +6,6 @@ import "./scroll.scss"
 import PropTypes from 'prop-types'
 
 class Scroll extends Component {
-    constructor(props) {
-        super(props)
-        console.log(props)
-    }
-
     componentDidUpdate() {
         // 组件更新后
         if (this.bScroll && this.props.refresh === true) {

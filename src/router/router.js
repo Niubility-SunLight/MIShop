@@ -3,6 +3,7 @@ import Category from '@/modules/category/category'
 import Cart from '@/modules/cart/cart'
 import User from '@/modules/user/user'
 import Login from "@/modules/login/login"
+import Search from "@/modules/search/search"
 
 export default [
     {
@@ -29,5 +30,10 @@ export default [
         path: "/login",
         name: "login",
         component: Login,
-    }
+    },
+    {
+        path: "/search",
+        name: "search",
+        component: Search,
+    },
 ]

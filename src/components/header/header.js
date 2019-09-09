@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import CSS from "./header.module.scss"
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 class Header extends Component {
+    goToSearch(e) {
+        this.props.history.push("/search")
+    }
     render() {
         const { location: { pathname } } = this.props
-        const hideHeaderPath = ['/user','/login','/home']
+        const hideHeaderPath = ['/user', '/login', '/home','/search']
         const hideHeader = hideHeaderPath.includes(pathname.trim())
-        const isShowHeader =  hideHeader ? false : true
+        const isShowHeader = hideHeader ? false : true
         return (
-            <div className={!isShowHeader?`${CSS.headerContainer} hd-animateOut`:`${CSS.headerContainer} hd-animateIn`}>
+            <div className={!isShowHeader ? `${CSS.headerContainer} hd-animateOut` : `${CSS.headerContainer} hd-animateIn`}>
                 <div className="app-header-left">
                     <div>
                         <i className="image-icons app-header-icon icon-back"></i>
@@ -19,7 +22,7 @@ class Header extends Component {
                     <p className={CSS.appHeaderTitle}>购物车</p>
                 </div>
                 <div className="app-header-right">
-                    <div>
+                    <div onClick={(e) => this.goToSearch(e)}>
                         <i className="image-icons app-header-icon icon-search"></i>
                     </div>
                 </div>
