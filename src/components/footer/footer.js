@@ -6,7 +6,7 @@ import CSS from "./footer.module.scss"
 class Footer extends Component {
     render() {
         const { location: { pathname } } = this.props
-        const hideHeaderPath = ['/login']
+        const hideHeaderPath = ['/login','/search']
         const hideHeader = hideHeaderPath.includes(pathname.trim())
         const isShowHeader = hideHeader ? false : true
         let navLinkList = [{ url: "/home", text: "首页", css: CSS.home }, { url: "/category", text: "分类", css: CSS.type }, { url: "/cart", text: "购物车", css: CSS.shopCar }, { url: "/user", text: "我的", css: CSS.mine }].map((value, index) => {
@@ -21,7 +21,6 @@ class Footer extends Component {
                     {navLinkList}
                 </div> : false}
             </>
-
         )
     }
 }
